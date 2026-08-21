@@ -85,13 +85,47 @@ With the goal of gaining a better understanding of the different uses of Maven, 
 1. Create the `feature/proj-structure` branch based on the `develop` branch.
 2. Answer the following questions in the README:
 
-   1. What is a Maven *Archetype*?
-   2. What is the purpose of the `maven-archetype-quickstart` archetype?
-   3. What command can be used to create a project based on a Maven archetype?
-   4. What is a `pull request` in GitHub?
-   5. How do you create a `pull request` in GitHub?
-   6. How do you approve a `pull request` in GitHub?
-   7. Include the bibliography, using **APA format**, for the sources consulted to answer the questions above.
+## Parte 1 — Preguntas de Maven y Pull Requests
+
+### 1. ¿Qué es un Maven Archetype?
+
+Un Maven Archetype es una plantilla de proyecto que Maven utiliza para generar automáticamente la estructura inicial de un nuevo proyecto (carpetas, archivos de configuración y clases de ejemplo), siguiendo convenciones estándar. Permite que un desarrollador no tenga que crear manualmente cada carpeta y archivo base al iniciar un proyecto.
+
+### 2. ¿Cuál es el propósito de `maven-archetype-quickstart`?
+
+Es el arquetipo más básico de Maven. Su propósito es generar rápidamente el esqueleto de un proyecto Java independiente (no web), con la estructura estándar `src/main/java` y `src/test/java`, un `pom.xml` inicial, una clase de ejemplo (`App.java`) y una clase de prueba (`AppTest.java`). Se usa típicamente para proyectos sencillos o de aprendizaje.
+
+### 3. ¿Qué comando permite crear un proyecto basado en un Maven Archetype?
+
+mvn archetype:generate -DgroupId=edu.eci.dosw.lab -DartifactId=DOSW-Laboratorio4 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+
+Este comando crea el proyecto `DOSW-Laboratorio4` con el `groupId` `edu.eci.dosw.lab`, usando el arquetipo quickstart, sin modo interactivo (para no tener que confirmar cada valor manualmente).
+
+### 4. ¿Qué es un Pull Request en GitHub?
+
+Un Pull Request (PR) es una solicitud formal para integrar los cambios de una rama (por ejemplo, una rama `feature`) dentro de otra rama (por ejemplo, `develop`). Permite revisar el código antes de fusionarlo, discutir cambios mediante comentarios, y dejar un registro de quién propuso y quién aprobó la integración.
+
+### 5. ¿Cómo se crea un Pull Request en GitHub?
+
+1. Se hace `push` de la rama con los cambios (ej. `feature/proj-structure`) al repositorio remoto.
+2. En GitHub, se entra a la pestaña **Pull requests** y se selecciona **New pull request**.
+3. Se elige la rama base (`develop`) y la rama de comparación (`feature/proj-structure`).
+4. Se agrega un título y una descripción de los cambios, y se selecciona **Create pull request**.
+
+### 6. ¿Cómo se aprueba un Pull Request en GitHub?
+
+Un colaborador distinto al autor entra al PR, revisa los cambios en la pestaña **Files changed**, y en la sección **Review changes** selecciona **Approve** (opcionalmente con comentarios). Una vez aprobado, el autor (u otra persona autorizada) puede hacer clic en **Merge pull request** para fusionar los cambios en la rama base.
+
+## Bibliografía (formato APA)
+
+Apache Software Foundation. (2024). *Introduction to archetypes*. Apache Maven Project. https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
+Apache Software Foundation. (2024). *Maven archetype quickstart*. Apache Maven Project. https://maven.apache.org/archetypes/maven-archetype-quickstart/
+
+GitHub, Inc. (2024). *About pull requests*. GitHub Docs. https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+
+GitHub, Inc. (2024). *Reviewing proposed changes in a pull request*. GitHub Docs. https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
 
 3. Create the basic project structure using the `maven-archetype-quickstart` archetype ([reference](https://maven.apache.org/archetypes/maven-archetype-quickstart/index.html)).
 
